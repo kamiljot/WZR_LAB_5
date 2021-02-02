@@ -1,0 +1,75 @@
+lut 02, 2021 8:29:44 PM jade.core.Runtime beginContainer
+INFO: ----------------------------------
+    This is JADE 4.5.0 - revision 6825 of 23-05-2017 10:06:04
+    downloaded in Open Source, under LGPL restrictions,
+    at http://jade.tilab.com/
+----------------------------------------
+lut 02, 2021 8:29:44 PM jade.imtp.leap.LEAPIMTPManager initialize
+INFO: Listening for intra-platform commands on address:
+- jicp://192.168.0.80:1099
+
+lut 02, 2021 8:29:44 PM jade.core.BaseService init
+INFO: Service jade.core.management.AgentManagement initialized
+lut 02, 2021 8:29:44 PM jade.core.BaseService init
+INFO: Service jade.core.messaging.Messaging initialized
+lut 02, 2021 8:29:44 PM jade.core.BaseService init
+INFO: Service jade.core.resource.ResourceManagement initialized
+lut 02, 2021 8:29:44 PM jade.core.BaseService init
+INFO: Service jade.core.mobility.AgentMobility initialized
+lut 02, 2021 8:29:44 PM jade.core.BaseService init
+INFO: Service jade.core.event.Notification initialized
+lut 02, 2021 8:29:44 PM jade.mtp.http.HTTPServer <init>
+INFO: HTTP-MTP Using XML parser com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser
+lut 02, 2021 8:29:44 PM jade.core.messaging.MessagingService boot
+INFO: MTP addresses:
+http://host.docker.internal:7778/acc
+lut 02, 2021 8:29:44 PM jade.core.AgentContainerImpl joinPlatform
+INFO: --------------------------------------
+Agent container Main-Container@192.168.0.80 is ready.
+--------------------------------------------
+Witam! Agent-kupiec buyer1@192.168.0.80:1099/JADE (wersja d <2020/21>) jest gotów!
+Zamierzam kupiæ ksi¹¿kê zatytu³owan¹ Zamek
+ Oferta kupna (CFP) jest wysy³ana do: ( agent-identifier :name seller1@192.168.0.80:1099/JADE ) ( agent-identifier :name seller2@192.168.0.80:1099/JADE ) 
+Witam! Agent-sprzedawca (wersja d <2020/21>) seller2@192.168.0.80:1099/JADE jest gotów do dzia³ania!
+Witam! Agent-sprzedawca (wersja d <2020/21>) seller1@192.168.0.80:1099/JADE jest gotów do dzia³ania!
+Agent-sprzedawca seller2@192.168.0.80:1099/JADE otrzyma³ wiadomoœæ: Zamek
+Agent-sprzedawca seller1@192.168.0.80:1099/JADE otrzyma³ wiadomoœæ: Zamek
+Agent-sprzedawca seller2@192.168.0.80:1099/JADE odpowiada: 238
+Agent-sprzedawca seller1@192.168.0.80:1099/JADE odpowiada: 321
+Kupiec proponuje 178.5 za Zamek.
+(PROPOSE
+ :receiver  (set ( agent-identifier :name seller2@192.168.0.80:1099/JADE  :addresses (sequence http://host.docker.internal:7778/acc )) )
+ :content  "Zamek;178.5" 
+ :reply-with  neg1612294184871  :conversation-id  book-trade )
+Agent-sprzedawca seller2@192.168.0.80:1099/JADE otrzyma³ oferte: 178.5
+Agent-sprzedawca seller2@192.168.0.80:1099/JADE odpowiada: 234
+Kupiec proponuje 206.25 za Zamek.
+(PROPOSE
+ :receiver  (set ( agent-identifier :name seller2@192.168.0.80:1099/JADE  :addresses (sequence http://host.docker.internal:7778/acc )) )
+ :content  "Zamek;206.25" 
+ :reply-with  neg1612294184874  :conversation-id  book-trade )
+Agent-sprzedawca seller2@192.168.0.80:1099/JADE otrzyma³ oferte: 206.25
+Agent-sprzedawca seller2@192.168.0.80:1099/JADE odpowiada: 230
+Kupiec proponuje 218.125 za Zamek.
+(PROPOSE
+ :receiver  (set ( agent-identifier :name seller2@192.168.0.80:1099/JADE  :addresses (sequence http://host.docker.internal:7778/acc )) )
+ :content  "Zamek;218.125" 
+ :reply-with  neg1612294184875  :conversation-id  book-trade )
+Agent-sprzedawca seller2@192.168.0.80:1099/JADE otrzyma³ oferte: 218.125
+Agent-sprzedawca seller2@192.168.0.80:1099/JADE odpowiada: 226
+Kupiec proponuje 222.0625 za Zamek.
+(PROPOSE
+ :receiver  (set ( agent-identifier :name seller2@192.168.0.80:1099/JADE  :addresses (sequence http://host.docker.internal:7778/acc )) )
+ :content  "Zamek;222.0625" 
+ :reply-with  neg1612294184876  :conversation-id  book-trade )
+Agent-sprzedawca seller2@192.168.0.80:1099/JADE otrzyma³ oferte: 222.0625
+Agent-sprzedawca seller2@192.168.0.80:1099/JADE odpowiada: 222
+lut 02, 2021 8:30:07 PM jade.domain.ams shutdownPlatformAction
+INFO: AMS - Activating platform shutdown. Requester = rma@192.168.0.80:1099/JADE
+Agent-sprzedawca (wersja d <2020/21>) seller1@192.168.0.80:1099/JADE zakoñczy³ siê.
+Agent-sprzedawca (wersja d <2020/21>) seller2@192.168.0.80:1099/JADE zakoñczy³ siê.
+Mateusz-kupiec buyer1@192.168.0.80:1099/JADE koñczy.
+lut 02, 2021 8:30:07 PM jade.core.messaging.MessageManager shutdown
+INFO: MessageManager shutting down ...
+lut 02, 2021 8:30:07 PM jade.core.Runtime$1 run
+INFO: JADE is closing down now.
