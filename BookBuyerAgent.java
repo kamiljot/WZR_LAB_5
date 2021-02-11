@@ -57,7 +57,7 @@ public class BookBuyerAgent extends Agent {
     // Metoda realizująca zakończenie pracy agenta:
     protected void takeDown()
     {
-      System.out.println("Mateusz-kupiec "+getAID().getName()+" kończy.");
+      System.out.println("kupiec "+getAID().getName()+" kończy.");
     }
 
     /**
