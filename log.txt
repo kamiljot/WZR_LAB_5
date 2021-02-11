@@ -1,75 +1,108 @@
-lut 02, 2021 8:29:44 PM jade.core.Runtime beginContainer
+lut 11, 2021 10:03:17 PM jade.core.Runtime beginContainer
 INFO: ----------------------------------
     This is JADE 4.5.0 - revision 6825 of 23-05-2017 10:06:04
     downloaded in Open Source, under LGPL restrictions,
     at http://jade.tilab.com/
 ----------------------------------------
-lut 02, 2021 8:29:44 PM jade.imtp.leap.LEAPIMTPManager initialize
+lut 11, 2021 10:03:17 PM jade.imtp.leap.LEAPIMTPManager initialize
 INFO: Listening for intra-platform commands on address:
-- jicp://192.168.0.80:1099
+- jicp://172.17.147.161:1099
 
-lut 02, 2021 8:29:44 PM jade.core.BaseService init
+lut 11, 2021 10:03:18 PM jade.core.BaseService init
 INFO: Service jade.core.management.AgentManagement initialized
-lut 02, 2021 8:29:44 PM jade.core.BaseService init
+lut 11, 2021 10:03:18 PM jade.core.BaseService init
 INFO: Service jade.core.messaging.Messaging initialized
-lut 02, 2021 8:29:44 PM jade.core.BaseService init
+lut 11, 2021 10:03:18 PM jade.core.BaseService init
 INFO: Service jade.core.resource.ResourceManagement initialized
-lut 02, 2021 8:29:44 PM jade.core.BaseService init
+lut 11, 2021 10:03:18 PM jade.core.BaseService init
 INFO: Service jade.core.mobility.AgentMobility initialized
-lut 02, 2021 8:29:44 PM jade.core.BaseService init
+lut 11, 2021 10:03:18 PM jade.core.BaseService init
 INFO: Service jade.core.event.Notification initialized
-lut 02, 2021 8:29:44 PM jade.mtp.http.HTTPServer <init>
+lut 11, 2021 10:03:18 PM jade.mtp.http.HTTPServer <init>
 INFO: HTTP-MTP Using XML parser com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser
-lut 02, 2021 8:29:44 PM jade.core.messaging.MessagingService boot
+lut 11, 2021 10:03:18 PM jade.core.messaging.MessagingService boot
 INFO: MTP addresses:
-http://host.docker.internal:7778/acc
-lut 02, 2021 8:29:44 PM jade.core.AgentContainerImpl joinPlatform
+http://DESKTOP-1Q4G677.mshome.net:7778/acc
+lut 11, 2021 10:03:18 PM jade.core.AgentContainerImpl joinPlatform
 INFO: --------------------------------------
-Agent container Main-Container@192.168.0.80 is ready.
+Agent container Main-Container@172.17.147.161 is ready.
 --------------------------------------------
-Witam! Agent-kupiec buyer1@192.168.0.80:1099/JADE (wersja d <2020/21>) jest gotów!
+Witam! Agent-kupiec buyer1@172.17.147.161:1099/JADE (wersja d <2020/21>) jest gotów!
 Zamierzam kupiæ ksi¹¿kê zatytu³owan¹ Zamek
- Oferta kupna (CFP) jest wysy³ana do: ( agent-identifier :name seller1@192.168.0.80:1099/JADE ) ( agent-identifier :name seller2@192.168.0.80:1099/JADE ) 
-Witam! Agent-sprzedawca (wersja d <2020/21>) seller2@192.168.0.80:1099/JADE jest gotów do dzia³ania!
-Witam! Agent-sprzedawca (wersja d <2020/21>) seller1@192.168.0.80:1099/JADE jest gotów do dzia³ania!
-Agent-sprzedawca seller2@192.168.0.80:1099/JADE otrzyma³ wiadomoœæ: Zamek
-Agent-sprzedawca seller1@192.168.0.80:1099/JADE otrzyma³ wiadomoœæ: Zamek
-Agent-sprzedawca seller2@192.168.0.80:1099/JADE odpowiada: 238
-Agent-sprzedawca seller1@192.168.0.80:1099/JADE odpowiada: 321
-Kupiec proponuje 178.5 za Zamek.
+ Oferta kupna (CFP) jest wysy³ana do: ( agent-identifier :name seller1@172.17.147.161:1099/JADE ) ( agent-identifier :name seller2@172.17.147.161:1099/JADE ) 
+Witam! Agent-sprzedawca (wersja d <2020/21>) seller1@172.17.147.161:1099/JADE jest gotów do dzia³ania!
+Witam! Agent-sprzedawca (wersja d <2020/21>) seller2@172.17.147.161:1099/JADE jest gotów do dzia³ania!
+Agent-sprzedawca seller2@172.17.147.161:1099/JADE otrzyma³ wiadomoœæ: Zamek
+Agent-sprzedawca seller1@172.17.147.161:1099/JADE otrzyma³ wiadomoœæ: Zamek
+Agent-sprzedawca seller2@172.17.147.161:1099/JADE odpowiada: 124
+Agent-sprzedawca seller1@172.17.147.161:1099/JADE odpowiada: 118
+0
+Kupiec proponuje 59.0 za Zamek.
 (PROPOSE
- :receiver  (set ( agent-identifier :name seller2@192.168.0.80:1099/JADE  :addresses (sequence http://host.docker.internal:7778/acc )) )
- :content  "Zamek;178.5" 
- :reply-with  neg1612294184871  :conversation-id  book-trade )
-Agent-sprzedawca seller2@192.168.0.80:1099/JADE otrzyma³ oferte: 178.5
-Agent-sprzedawca seller2@192.168.0.80:1099/JADE odpowiada: 234
-Kupiec proponuje 206.25 za Zamek.
+ :receiver  (set ( agent-identifier :name seller1@172.17.147.161:1099/JADE  :addresses (sequence http://DESKTOP-1Q4G677.mshome.net:7778/acc )) )
+ :content  "Zamek;59.0" 
+ :reply-with  neg1613077398177  :conversation-id  book-trade )
+Agent-sprzedawca seller1@172.17.147.161:1099/JADE otrzyma³ oferte: 59.0
+Agent-sprzedawca seller1@172.17.147.161:1099/JADE odpowiada: 103.25
+jesteœmy w case 3
+1
+1
+Kupiec proponuje 64.0 za Zamek.
 (PROPOSE
- :receiver  (set ( agent-identifier :name seller2@192.168.0.80:1099/JADE  :addresses (sequence http://host.docker.internal:7778/acc )) )
- :content  "Zamek;206.25" 
- :reply-with  neg1612294184874  :conversation-id  book-trade )
-Agent-sprzedawca seller2@192.168.0.80:1099/JADE otrzyma³ oferte: 206.25
-Agent-sprzedawca seller2@192.168.0.80:1099/JADE odpowiada: 230
-Kupiec proponuje 218.125 za Zamek.
+ :receiver  (set ( agent-identifier :name seller1@172.17.147.161:1099/JADE  :addresses (sequence http://DESKTOP-1Q4G677.mshome.net:7778/acc )) )
+ :content  "Zamek;64.0" 
+ :reply-with  neg1613077398179  :conversation-id  book-trade )
+Agent-sprzedawca seller1@172.17.147.161:1099/JADE otrzyma³ oferte: 64.0
+Agent-sprzedawca seller1@172.17.147.161:1099/JADE odpowiada: 104.5
+jesteœmy w case 3
+2
+2
+Kupiec proponuje 69.0 za Zamek.
 (PROPOSE
- :receiver  (set ( agent-identifier :name seller2@192.168.0.80:1099/JADE  :addresses (sequence http://host.docker.internal:7778/acc )) )
- :content  "Zamek;218.125" 
- :reply-with  neg1612294184875  :conversation-id  book-trade )
-Agent-sprzedawca seller2@192.168.0.80:1099/JADE otrzyma³ oferte: 218.125
-Agent-sprzedawca seller2@192.168.0.80:1099/JADE odpowiada: 226
-Kupiec proponuje 222.0625 za Zamek.
+ :receiver  (set ( agent-identifier :name seller1@172.17.147.161:1099/JADE  :addresses (sequence http://DESKTOP-1Q4G677.mshome.net:7778/acc )) )
+ :content  "Zamek;69.0" 
+ :reply-with  neg1613077398180  :conversation-id  book-trade )
+Agent-sprzedawca seller1@172.17.147.161:1099/JADE otrzyma³ oferte: 69.0
+Agent-sprzedawca seller1@172.17.147.161:1099/JADE odpowiada: 105.75
+jesteœmy w case 3
+3
+3
+Kupiec proponuje 74.0 za Zamek.
 (PROPOSE
- :receiver  (set ( agent-identifier :name seller2@192.168.0.80:1099/JADE  :addresses (sequence http://host.docker.internal:7778/acc )) )
- :content  "Zamek;222.0625" 
- :reply-with  neg1612294184876  :conversation-id  book-trade )
-Agent-sprzedawca seller2@192.168.0.80:1099/JADE otrzyma³ oferte: 222.0625
-Agent-sprzedawca seller2@192.168.0.80:1099/JADE odpowiada: 222
-lut 02, 2021 8:30:07 PM jade.domain.ams shutdownPlatformAction
-INFO: AMS - Activating platform shutdown. Requester = rma@192.168.0.80:1099/JADE
-Agent-sprzedawca (wersja d <2020/21>) seller1@192.168.0.80:1099/JADE zakoñczy³ siê.
-Agent-sprzedawca (wersja d <2020/21>) seller2@192.168.0.80:1099/JADE zakoñczy³ siê.
-Mateusz-kupiec buyer1@192.168.0.80:1099/JADE koñczy.
-lut 02, 2021 8:30:07 PM jade.core.messaging.MessageManager shutdown
+ :receiver  (set ( agent-identifier :name seller1@172.17.147.161:1099/JADE  :addresses (sequence http://DESKTOP-1Q4G677.mshome.net:7778/acc )) )
+ :content  "Zamek;74.0" 
+ :reply-with  neg1613077398182  :conversation-id  book-trade )
+Agent-sprzedawca seller1@172.17.147.161:1099/JADE otrzyma³ oferte: 74.0
+Agent-sprzedawca seller1@172.17.147.161:1099/JADE odpowiada: 107.0
+jesteœmy w case 3
+4
+4
+Kupiec proponuje 79.0 za Zamek.
+(PROPOSE
+ :receiver  (set ( agent-identifier :name seller1@172.17.147.161:1099/JADE  :addresses (sequence http://DESKTOP-1Q4G677.mshome.net:7778/acc )) )
+ :content  "Zamek;79.0" 
+ :reply-with  neg1613077398184  :conversation-id  book-trade )
+Agent-sprzedawca seller1@172.17.147.161:1099/JADE otrzyma³ oferte: 79.0
+Agent-sprzedawca seller1@172.17.147.161:1099/JADE odpowiada: 108.25
+jesteœmy w case 3
+5
+5
+Kupiec proponuje 84.0 za Zamek.
+(PROPOSE
+ :receiver  (set ( agent-identifier :name seller1@172.17.147.161:1099/JADE  :addresses (sequence http://DESKTOP-1Q4G677.mshome.net:7778/acc )) )
+ :content  "Zamek;84.0" 
+ :reply-with  neg1613077398185  :conversation-id  book-trade )
+Agent-sprzedawca seller1@172.17.147.161:1099/JADE otrzyma³ oferte: 84.0
+Agent-sprzedawca seller1@172.17.147.161:1099/JADE odpowiada: 109.5
+jesteœmy w case 3
+6
+Kupiec odrzucil oferte kupna Zamek.
+Mateusz-kupiec buyer1@172.17.147.161:1099/JADE koñczy.
+lut 11, 2021 10:03:25 PM jade.domain.ams shutdownPlatformAction
+INFO: AMS - Activating platform shutdown. Requester = rma@172.17.147.161:1099/JADE
+Agent-sprzedawca (wersja d <2020/21>) seller1@172.17.147.161:1099/JADE zakoñczy³ siê.
+Agent-sprzedawca (wersja d <2020/21>) seller2@172.17.147.161:1099/JADE zakoñczy³ siê.
+lut 11, 2021 10:03:25 PM jade.core.messaging.MessageManager shutdown
 INFO: MessageManager shutting down ...
-lut 02, 2021 8:30:07 PM jade.core.Runtime$1 run
+lut 11, 2021 10:03:25 PM jade.core.Runtime$1 run
 INFO: JADE is closing down now.

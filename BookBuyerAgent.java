@@ -18,6 +18,7 @@ class MyOwnBehaviour extends Behaviour
   }
 }
 
+
 public class BookBuyerAgent extends Agent {
 
     private String targetBookTitle;    // tytuł kupowanej książki przekazywany poprzez argument wejściowy
@@ -26,6 +27,7 @@ public class BookBuyerAgent extends Agent {
     private AID[] sellerAgents = {
       new AID("seller1", AID.ISLOCALNAME),
       new AID("seller2", AID.ISLOCALNAME)};
+  int numOferty = 0;
     
     // Inicjalizacja klasy agenta:
     protected void setup()
@@ -77,6 +79,7 @@ public class BookBuyerAgent extends Agent {
       public void action()
       {
 
+
         switch (step) {
         case 0:      // wysłanie oferty kupna
           System.out.print(" Oferta kupna (CFP) jest wysyłana do: ");
@@ -104,6 +107,7 @@ public class BookBuyerAgent extends Agent {
           break;
         case 1:      // odbiór ofert sprzedaży/odmowy od agentów-sprzedawców
           ACLMessage reply = myAgent.receive(mt);      // odbiór odpowiedzi
+
           if (reply != null)
           {
             if (reply.getPerformative() == ACLMessage.PROPOSE)   // jeśli wiadomość jest typu PROPOSE
@@ -113,7 +117,7 @@ public class BookBuyerAgent extends Agent {
               {
                 bestPrice = price;
                 bestSeller = reply.getSender();
-                wantedPrice = bestPrice * 0.75;
+                wantedPrice = bestPrice * 0.5;
               }
             }
             repliesCnt++;                                        // liczba ofert
@@ -129,6 +133,13 @@ public class BookBuyerAgent extends Agent {
           }
           break;
         case 2:      // wysłanie zamówienia do sprzedawcy, który złożył najlepszą ofertę
+          if(numOferty >= 6){
+            System.out.println("Kupiec odrzucil oferte kupna "+targetBookTitle+".");
+            myAgent.doDelete();
+            step = 9;
+            break;
+          }
+          System.out.println(numOferty);
           System.out.println("Kupiec proponuje "+ wantedPrice +" za "+targetBookTitle+".");
           ACLMessage order = new ACLMessage(ACLMessage.PROPOSE);
           order.addReceiver(bestSeller);
@@ -141,36 +152,36 @@ public class BookBuyerAgent extends Agent {
                   MessageTemplate.MatchInReplyTo(order.getReplyWith()));
           step = 3;
           break;
-        case 3: reply = myAgent.receive(mt);
-          if (reply != null)
-          {
-            if (reply.getPerformative() == ACLMessage.PROPOSE){
-              bestPrice = Integer.parseInt(reply.getContent());
-              if(bestPrice > wantedPrice) {
-                wantedPrice = (bestPrice + wantedPrice) / 2;
-                step = 2;
-              } else {
-                step = 4;
-              }
-            } else if(reply.getPerformative() == ACLMessage.REJECT_PROPOSAL){
-              System.out.println("Kupiec odrzucil oferte kupna "+targetBookTitle+".");
-              myAgent.doDelete();
-              step = 999;
-            }
-          }
-          else
-          {
-            block();
-          }
 
+        case 3:
+          reply = myAgent.receive(mt);
+
+        if (reply == null){
           break;
+        }
+          /*System.out.println("jesteśmy w case 3");*/
+        bestPrice = Double.parseDouble(reply.getContent());
+        if((wantedPrice - 2) <= bestPrice && (wantedPrice + 2) >= bestPrice) {
+          step = 4;
+          break;
+        } else{
+          numOferty++;
+          System.out.println(numOferty);
+          wantedPrice = wantedPrice + 5;
+          step = 2;
+          break;
+
+        }
+
           case 4:      // wysłanie zamówienia do sprzedawcy, który złożył najlepszą ofertę
             order = new ACLMessage(ACLMessage.ACCEPT_PROPOSAL);
             order.addReceiver(bestSeller);
             order.setContent(targetBookTitle);
             order.setConversationId("handel_ksiazkami");
             order.setReplyWith("order"+System.currentTimeMillis());
+            System.out.println("O, kupuję za "+bestPrice+".");
             myAgent.send(order);
+            System.out.println("Zamówione.");
             mt = MessageTemplate.and(MessageTemplate.MatchConversationId("handel_ksiazkami"),
                     MessageTemplate.MatchInReplyTo(order.getReplyWith()));
             step = 5;
@@ -197,7 +208,7 @@ public class BookBuyerAgent extends Agent {
       } // action
 
       public boolean done() {
-        return ((step == 2 && bestSeller == null) || step == 4);
+        return ((step == 2 && bestSeller == null) || step == 9);
       }
     } // Koniec wewnętrznej klasy RequestPerformer
 }
