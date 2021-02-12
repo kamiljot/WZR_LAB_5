@@ -27,7 +27,7 @@ public class BookBuyerAgent extends Agent {
     private AID[] sellerAgents = {
       new AID("seller1", AID.ISLOCALNAME),
       new AID("seller2", AID.ISLOCALNAME)};
-  int numOferty = 0;
+  int offerNumb = 0;
     
     // Inicjalizacja klasy agenta:
     protected void setup()
@@ -133,13 +133,13 @@ public class BookBuyerAgent extends Agent {
           }
           break;
         case 2:      // wysłanie zamówienia do sprzedawcy, który złożył najlepszą ofertę
-          if(numOferty >= 6){
+          if(offerNumb >= 6){
             System.out.println("Kupiec odrzucil oferte kupna "+targetBookTitle+".");
             myAgent.doDelete();
             step = 9;
             break;
           }
-          System.out.println(numOferty);
+          System.out.println(offerNumb);
           System.out.println("Kupiec proponuje "+ wantedPrice +" za "+targetBookTitle+".");
           ACLMessage order = new ACLMessage(ACLMessage.PROPOSE);
           order.addReceiver(bestSeller);
@@ -165,8 +165,8 @@ public class BookBuyerAgent extends Agent {
           step = 4;
           break;
         } else{
-          numOferty++;
-          System.out.println(numOferty);
+          offerNumb++;
+          System.out.println(offerNumb);
           wantedPrice = wantedPrice + 5;
           step = 2;
           break;
